@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xác định vị trí</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Nhấp vào liên kết để xác định vị trí của bạn</h1>
-        <a href="#" id="locationLink">Xác định vị trí của tôi</a>
-        <p id="locationResult"></p>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+<div id="map" style="height: 400px; width: 100%;"></div>
+<script>
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 8,
+            center: { lat: 10.8231, lng: 106.6297 }, // Tọa độ mặc định
+        });
+
+        const marker = new google.maps.Marker({
+            position: { lat: 10.8231, lng: 106.6297 },
+            map: map,
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
